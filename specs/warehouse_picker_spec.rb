@@ -6,13 +6,18 @@ class TestWarehouse < Minitest::Test
 
 
   def test_item_in_bay()
-    item = item_in_bay('b5')
-    assert_equal('nail filer', item)
+    item = item_in_bay('b10')
+    assert_equal('cookie jar', item)
   end
 
   def test_bay_of_item()
     bay = bay_of_item( 'nail filer' )
     assert_equal( 'b5', bay )
+  end
+
+  def test_list_of_items()
+    
+    
   end
 
 end
