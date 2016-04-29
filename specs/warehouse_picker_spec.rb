@@ -11,8 +11,8 @@ class TestWarehouse < Minitest::Test
   end
 
   def test_bay_of_item()
-    bay = bay_of_item('nail filer')
-    assert_equal('b5', bay)
+    bay = bay_of_item( 'nail filer' )
+    assert_equal( 'b5', bay )
   end
 
 end
