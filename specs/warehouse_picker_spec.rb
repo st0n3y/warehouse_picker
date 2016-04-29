@@ -16,8 +16,14 @@ class TestWarehouse < Minitest::Test
   end
 
   def test_list_of_items()
-    bays = list_of_items( [ "b5", "b10", "b6" ] )
-    assert_equal( [ "nail filer", "cookie jar", "tooth paste" ], bays )
+    items = list_of_items( [ "b5", "b10", "b6" ] )
+    assert_equal( [ "nail filer", "cookie jar", "tooth paste" ], items )
   end
+
+  def test_list_of_bays()
+    bays = list_of_bays( [ "rusty nail", "shoe lace", "leg warmers" ] )
+    assert_equal( [ "c1", "c9", "c10" ], bays )
+  end
+
 
 end
