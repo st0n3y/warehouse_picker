@@ -1,6 +1,6 @@
 WAREHOUSE = {
 
-rack_a: [ 
+a: [ 
 "rubber band",
 "glow stick",
 "model car",
@@ -13,7 +13,7 @@ rack_a: [
 "needle" 
 ]
 
-rack_c: [ 
+c: [ 
 "rusty nail",
 "drill press",
 "chalk",
@@ -26,7 +26,7 @@ rack_c: [
 "leg warmers"
 ]
 
-rack_b: [
+b: [
 "tyre swing",
 "sharpie",
 "picture frame",
@@ -41,11 +41,28 @@ rack_b: [
 
 }
 
-def item_in_bay()
-  WAREHOUSE[]
+def item_in_bay(location)
+  rack_bay = location.split( //, 2 )
+  rack = rack_bay[0]
+  bay = rack_bay[1]
+  return WAREHOUSE[rack.to_sym][bay.to_i -1]
 end
 
 
 def bay_of_item()
-
+  
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
