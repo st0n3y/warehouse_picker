@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require ‘minitest/rg’
 require_relative '../warehouse_picker_funcs.rb'
 
 class TestWarehouse < Minitest::Test
