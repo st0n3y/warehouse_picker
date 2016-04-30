@@ -27,7 +27,7 @@ class TestWarehouse < Minitest::Test
 
   def test_bay_distance()
     distance = bay_distance( [ "b3", "c7", "c9", "a3" ] )
-    assert_equal( ["picture frame", "paint brush", "shoe lace", "blouse"], distance )
+    assert_equal( 15, distance )
   end
 
 end

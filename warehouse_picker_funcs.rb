@@ -59,7 +59,7 @@ end
 def list_of_items( locations )
   item_list = []
   for location in locations
-    item_list = item_list.push(item_in_bay(location.to_sym))
+    item_list.push(item_in_bay(location.to_sym))
   end
   return item_list
 end
@@ -68,14 +68,18 @@ end
 def list_of_bays( items )
   bay_list = []
   for item in items
-    bay_list = bay_list.push(bay_of_item(item.to_s))
+    bay_list.push(bay_of_item(item.to_s))
   end
   return bay_list
 end
 
 
 def bay_distance( locations )
-  return list_of_items( locations )
+  bay_indices = []
+  for location in locations
+    bay_indices << WAREHOUSE.index(location.to_sym)
+  end
+  return bay_indices
 
 end
 
