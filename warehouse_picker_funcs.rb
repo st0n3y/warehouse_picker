@@ -74,6 +74,12 @@ def list_of_bays( items )
 end
 
 
+def bay_distance( locations )
+  return list_of_items( locations )
+
+end
+
+
 # def bay_of_item(item)
 #   for stock in WAREHOUSE
 #     if stock[value] == item
