@@ -75,39 +75,13 @@ end
 
 
 def bay_distance( locations )
-  bay_indices = []
   for location in locations
-    bay_indices << WAREHOUSE.index(location.to_sym)
+    location_sym = location.to_sym
   end
-  return bay_indices
-
+  for pair in WAREHOUSE
+    if pair.has_key?(location_sym)
+       WAREHOUSE.index(pair)
+    end
+  end
+  return
 end
-
-
-# def bay_of_item(item)
-#   for stock in WAREHOUSE
-#     if stock[value] == item
-#       return stock[key]
-#   end
-# end
-
-# def item_in_bay(location)
-#   rack_bay = location.split( //, 2 )
-#   rack = rack_bay[0]
-#   bay = rack_bay[1]
-#   return WAREHOUSE[rack.to_sym][bay.to_i -1]
-# end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
