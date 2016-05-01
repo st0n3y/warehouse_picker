@@ -78,10 +78,11 @@ def bay_distance( locations )
   for location in locations
     location_sym = location.to_sym
   end
+  bay_indices = []
   for pair in WAREHOUSE
     if pair.has_key?(location_sym)
-       WAREHOUSE.index(pair)
+      bay_indices << WAREHOUSE.index(pair)
     end
   end
-  return
+  return bay_indices.rindex(bay_indices.max) - bay_indices.rindex(bay_indices.min)
 end
