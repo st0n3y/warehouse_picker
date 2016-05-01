@@ -74,15 +74,18 @@ def list_of_bays( items )
 end
 
 
-def bay_distance( locations )
+def item_list_bay_distance( locations )
+  bay_indices = []
   for location in locations
     location_sym = location.to_sym
-  end
-  bay_indices = []
-  for pair in WAREHOUSE
-    if pair.has_key?(location_sym)
-      bay_indices << WAREHOUSE.index(pair)
+    for pair in WAREHOUSE
+      if pair.has_key?(location_sym)
+        bay_indices << WAREHOUSE.index(pair)
+        max = bay_indices.max
+        min = bay_indices.min
+        distance = max - min
+      end
     end
   end
-  return bay_indices.rindex(bay_indices.max) - bay_indices.rindex(bay_indices.min)
+  return list_of_items( locations ),  distance
 end

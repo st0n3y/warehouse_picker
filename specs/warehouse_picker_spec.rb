@@ -25,9 +25,11 @@ class TestWarehouse < Minitest::Test
     assert_equal( [ "c1", "c9", "c10" ], bays )
   end
 
-  def test_bay_distance()
-    distance = bay_distance( [ "b3", "c7", "c9", "a3" ] )
-    assert_equal( 15, distance )
+  def test_item_list_bay_distance()
+    items = item_list_bay_distance( [ "b3", "c7", "c9", "a3" ] )
+    distance = item_list_bay_distance( [ "b3", "c7", "c9", "a3" ] )
+    assert_equal( [ "picture frame", "paint brush", "shoe lace", "blouse" ], items[0] )
+    assert_equal( 15, distance[1] )
   end
 
 end
