@@ -32,4 +32,9 @@ class TestWarehouse < Minitest::Test
     assert_equal( 15, distance[1] )
   end
 
+  def test_bay_id_and_order
+    bays = bay_id_and_order( [ "hanger", "deodorant", "candy wrapper", "rubber band" ] )
+    assert_equal( [ "a10", "a4", "c8", "b9" ], bays )
+  end
+
 end

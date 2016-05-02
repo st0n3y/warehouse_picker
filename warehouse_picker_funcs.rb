@@ -89,3 +89,13 @@ def item_list_bay_distance( locations )
   end
   return list_of_items( locations ),  distance
 end
+
+
+def bay_id_and_order( items )
+  bays = []
+  for pair in WAREHOUSE
+    bays << bay_of_item(item.to_s)
+  end
+end
+
+# bays << product[:bay] if items.include?(product[:name])
